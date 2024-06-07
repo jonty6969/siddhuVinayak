@@ -15,7 +15,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
-public class Flipkart {
+public class FlipkartTest {
 	@Test
 	public void Flip() throws Throwable {
 		DesiredCapabilities dc = new DesiredCapabilities();
