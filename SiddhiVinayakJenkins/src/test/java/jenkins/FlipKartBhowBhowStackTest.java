@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class FlipKartBhowBhowStack {
+public class FlipKartBhowBhowStackTest {
 
 
 	public final static String username = "slowlaghang_SarzD0";
