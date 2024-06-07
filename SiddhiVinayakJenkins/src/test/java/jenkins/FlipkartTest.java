@@ -1,6 +1,5 @@
 package jenkins;
 
-import java.io.File;
 import java.net.URL;
 import java.time.Duration;
 import java.util.List;
@@ -10,10 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
-
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
 
 public class FlipkartTest {
 	@Test
@@ -36,7 +32,8 @@ public class FlipkartTest {
 		AndroidDriver driver = new AndroidDriver( url, dc);
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
-
+		
+		
 		driver.get("https://www.flipkart.com/");
 
 		driver.findElement(By.xpath("//div[text()='Search for Products, Brands and More']")).click();
