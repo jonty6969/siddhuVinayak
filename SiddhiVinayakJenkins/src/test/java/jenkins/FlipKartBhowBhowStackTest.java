@@ -2,6 +2,7 @@ package jenkins;
 
 import java.net.URL;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
 import java.util.TreeSet;
 import org.openqa.selenium.By;
@@ -22,19 +23,14 @@ public class FlipKartBhowBhowStackTest {
 	@Test
 	public void Flip() throws Throwable {
 		DesiredCapabilities dc = new DesiredCapabilities();
+
+		HashMap<String, Object> browserStackOptions = new HashMap<String, Object>();
+		browserStackOptions.put("platformName", "android");
+		browserStackOptions.put("platformVersion", "13.0");
+		browserStackOptions.put("deviceName", "Samsung Galaxy S23");
+		browserStackOptions.put("browserName", "chrome");
 		
-		dc.setCapability("platformName", "android");
-		dc.setCapability("platformVersion", "13.0");
-		dc.setCapability("deviceName", "Samsung Galaxy S23 Ultra");
-		dc.setCapability("noReset", true);
-		dc.setCapability("ignoreHiddenApiPolicyError", true);
-		dc.setCapability("autoGrantPermission", true);
-		dc.setCapability("browserName", "chrome");
-//		File f = new File("C:\\Users\\shubh\\AppData\\Roaming\\npm\\node_modules\\appium\\lib\\main.js");
-//		AppiumDriverLocalService service = new AppiumServiceBuilder().withAppiumJS(f).withIPAddress("127.0.0.1")
-//				.usingPort(4723).withTimeout(Duration.ofSeconds(9000)).build();
-//		service.start();
-//		URL url = new URL("http://localhost:4723");
+		dc.setCapability("bstack:options", browserStackOptions);
 
 		AndroidDriver driver = new AndroidDriver( new URL(url), dc);
 
