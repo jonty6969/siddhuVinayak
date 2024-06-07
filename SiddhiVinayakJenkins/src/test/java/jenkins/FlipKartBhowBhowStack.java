@@ -4,16 +4,22 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.List;
 import java.util.TreeSet;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 
 public class FlipKartBhowBhowStack {
 
+
+	public final static String username = "slowlaghang_SarzD0";
+	public final static String accessKey = "gZypCjGijggyf1R3qGHn";
+	public final static String url = "https://"+username+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub";
+	
+	@Test
 	public void Flip() throws Throwable {
 		DesiredCapabilities dc = new DesiredCapabilities();
 		
@@ -28,9 +34,9 @@ public class FlipKartBhowBhowStack {
 //		AppiumDriverLocalService service = new AppiumServiceBuilder().withAppiumJS(f).withIPAddress("127.0.0.1")
 //				.usingPort(4723).withTimeout(Duration.ofSeconds(9000)).build();
 //		service.start();
-		URL url = new URL("http://localhost:4723");
+//		URL url = new URL("http://localhost:4723");
 
-		AndroidDriver driver = new AndroidDriver( url, dc);
+		AndroidDriver driver = new AndroidDriver( new URL(url), dc);
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
 
